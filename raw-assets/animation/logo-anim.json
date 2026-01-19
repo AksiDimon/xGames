@@ -1,0 +1,1301 @@
+{
+  "frames": {
+    "LOGO_ANIMATION0000.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0001.png": {
+      "frame": {
+        "x": 803,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0002.png": {
+      "frame": {
+        "x": 1,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0003.png": {
+      "frame": {
+        "x": 803,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0004.png": {
+      "frame": {
+        "x": 803,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0005.png": {
+      "frame": {
+        "x": 803,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0006.png": {
+      "frame": {
+        "x": 803,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0007.png": {
+      "frame": {
+        "x": 803,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0008.png": {
+      "frame": {
+        "x": 1,
+        "y": 120,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0009.png": {
+      "frame": {
+        "x": 803,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0010.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0011.png": {
+      "frame": {
+        "x": 1,
+        "y": 239,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0012.png": {
+      "frame": {
+        "x": 803,
+        "y": 239,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0013.png": {
+      "frame": {
+        "x": 1,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0014.png": {
+      "frame": {
+        "x": 1,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0015.png": {
+      "frame": {
+        "x": 1,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0016.png": {
+      "frame": {
+        "x": 1,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0017.png": {
+      "frame": {
+        "x": 1,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0018.png": {
+      "frame": {
+        "x": 803,
+        "y": 239,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0019.png": {
+      "frame": {
+        "x": 1,
+        "y": 239,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0020.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0021.png": {
+      "frame": {
+        "x": 803,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0022.png": {
+      "frame": {
+        "x": 1,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0023.png": {
+      "frame": {
+        "x": 803,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0024.png": {
+      "frame": {
+        "x": 803,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0025.png": {
+      "frame": {
+        "x": 803,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0026.png": {
+      "frame": {
+        "x": 803,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0027.png": {
+      "frame": {
+        "x": 803,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0028.png": {
+      "frame": {
+        "x": 1,
+        "y": 477,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0029.png": {
+      "frame": {
+        "x": 803,
+        "y": 358,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0030.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0031.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0032.png": {
+      "frame": {
+        "x": 1,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0033.png": {
+      "frame": {
+        "x": 803,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0034.png": {
+      "frame": {
+        "x": 803,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0035.png": {
+      "frame": {
+        "x": 803,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0036.png": {
+      "frame": {
+        "x": 803,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0037.png": {
+      "frame": {
+        "x": 803,
+        "y": 596,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0038.png": {
+      "frame": {
+        "x": 1605,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0039.png": {
+      "frame": {
+        "x": 1724,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0040.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0041.png": {
+      "frame": {
+        "x": 1,
+        "y": 715,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0042.png": {
+      "frame": {
+        "x": 803,
+        "y": 715,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0043.png": {
+      "frame": {
+        "x": 1,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0044.png": {
+      "frame": {
+        "x": 1,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0045.png": {
+      "frame": {
+        "x": 1,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0046.png": {
+      "frame": {
+        "x": 1,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0047.png": {
+      "frame": {
+        "x": 1,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0048.png": {
+      "frame": {
+        "x": 803,
+        "y": 715,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0049.png": {
+      "frame": {
+        "x": 1,
+        "y": 715,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0050.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0051.png": {
+      "frame": {
+        "x": 803,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0052.png": {
+      "frame": {
+        "x": 1,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0053.png": {
+      "frame": {
+        "x": 803,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0054.png": {
+      "frame": {
+        "x": 803,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0055.png": {
+      "frame": {
+        "x": 803,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0056.png": {
+      "frame": {
+        "x": 803,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0057.png": {
+      "frame": {
+        "x": 803,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0058.png": {
+      "frame": {
+        "x": 1,
+        "y": 953,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0059.png": {
+      "frame": {
+        "x": 803,
+        "y": 834,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    },
+    "LOGO_ANIMATION0060.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 800,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 39,
+        "w": 800,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 200
+      }
+    }
+  },
+  "animations": {
+    "LOGO_ANIMATION": [
+      "LOGO_ANIMATION0000.png",
+      "LOGO_ANIMATION0001.png",
+      "LOGO_ANIMATION0002.png",
+      "LOGO_ANIMATION0003.png",
+      "LOGO_ANIMATION0004.png",
+      "LOGO_ANIMATION0005.png",
+      "LOGO_ANIMATION0006.png",
+      "LOGO_ANIMATION0007.png",
+      "LOGO_ANIMATION0008.png",
+      "LOGO_ANIMATION0009.png",
+      "LOGO_ANIMATION0010.png",
+      "LOGO_ANIMATION0011.png",
+      "LOGO_ANIMATION0012.png",
+      "LOGO_ANIMATION0013.png",
+      "LOGO_ANIMATION0014.png",
+      "LOGO_ANIMATION0015.png",
+      "LOGO_ANIMATION0016.png",
+      "LOGO_ANIMATION0017.png",
+      "LOGO_ANIMATION0018.png",
+      "LOGO_ANIMATION0019.png",
+      "LOGO_ANIMATION0020.png",
+      "LOGO_ANIMATION0021.png",
+      "LOGO_ANIMATION0022.png",
+      "LOGO_ANIMATION0023.png",
+      "LOGO_ANIMATION0024.png",
+      "LOGO_ANIMATION0025.png",
+      "LOGO_ANIMATION0026.png",
+      "LOGO_ANIMATION0027.png",
+      "LOGO_ANIMATION0028.png",
+      "LOGO_ANIMATION0029.png",
+      "LOGO_ANIMATION0030.png",
+      "LOGO_ANIMATION0031.png",
+      "LOGO_ANIMATION0032.png",
+      "LOGO_ANIMATION0033.png",
+      "LOGO_ANIMATION0034.png",
+      "LOGO_ANIMATION0035.png",
+      "LOGO_ANIMATION0036.png",
+      "LOGO_ANIMATION0037.png",
+      "LOGO_ANIMATION0038.png",
+      "LOGO_ANIMATION0039.png",
+      "LOGO_ANIMATION0040.png",
+      "LOGO_ANIMATION0041.png",
+      "LOGO_ANIMATION0042.png",
+      "LOGO_ANIMATION0043.png",
+      "LOGO_ANIMATION0044.png",
+      "LOGO_ANIMATION0045.png",
+      "LOGO_ANIMATION0046.png",
+      "LOGO_ANIMATION0047.png",
+      "LOGO_ANIMATION0048.png",
+      "LOGO_ANIMATION0049.png",
+      "LOGO_ANIMATION0050.png",
+      "LOGO_ANIMATION0051.png",
+      "LOGO_ANIMATION0052.png",
+      "LOGO_ANIMATION0053.png",
+      "LOGO_ANIMATION0054.png",
+      "LOGO_ANIMATION0055.png",
+      "LOGO_ANIMATION0056.png",
+      "LOGO_ANIMATION0057.png",
+      "LOGO_ANIMATION0058.png",
+      "LOGO_ANIMATION0059.png",
+      "LOGO_ANIMATION0060.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "logo-anim.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1842,
+      "h": 1071
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:e08ebfe30d5621cbf895cc6a905ad186:be140171d822af24c9ef7b389375300d:3e0993f8a4e4f2f53254798f6c594804$"
+  }
+}

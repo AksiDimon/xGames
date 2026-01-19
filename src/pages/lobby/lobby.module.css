@@ -1,0 +1,87 @@
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.lobbyContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* width: 1920px;
+  height: 1080px; */
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jackpots {
+  /* position: absolute; */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+
+  background-color: #1F2022;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.jackpotsInner {
+  position: relative;
+  max-width: 1532px; /* натуральная ширина */
+  width: 100%;
+}
+
+.jackpotsImg{
+    display: block;
+    max-width: 100%;
+    /* height: auto; */
+    height: 75px;
+}
+
+.digitsLayer{
+    position: absolute;
+    inset: 0;
+}
+
+
+
+.digit {
+  width: 100%;
+  height: 100%;
+  background-image: url("/raw-assets/digits.png"); /* твоя вертикальная картинка */
+  background-repeat: no-repeat;
+
+  /* ключ: делаем фон по высоте в 11 раз выше окна */
+  background-size: 100% calc(100% * 11);
+}
+
+.stub {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    background-image: url('/raw-assets/digit-space.png');
+    background-repeat: no-repeat;
+    
+}
+
+
+
+/* digits in jackpots styles */
+.counter {
+  position: absolute;
+  display: flex;
+}
+
+.slot {
+  height: 34px; /* высота окошка (важно!) */
+  /* overflow: hidden; */
+  /* outline: 2px solid red; */
+}

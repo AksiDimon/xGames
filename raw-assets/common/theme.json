@@ -1,0 +1,324 @@
+{
+  "name": "mercury",
+  "settings": {
+    "general": {
+      "isCurrencyHidden": true
+    }
+  },
+  "components": {
+    "fonts": {
+      "secondary": {
+        "fontSize": 28,
+        "fontWeight": "bolder",
+        "fontFamily": "Nunito",
+        "fill": "#36BACB",
+        "stroke": "#162F83"
+      },
+      "primary": {
+        "fontSize": 28,
+        "fontFamily": "Nunito",
+        "fontWeight": "bolder",
+        "letterSpacing": -0.5,
+        "fill": ["#F4C810", "#F4C810"],
+        "stroke": "#FFCB6B"
+      },
+      "defaultBtnTitleStyle": {
+        "fill": ["#162F83"],
+        "fontSize": 48,
+        "fontWeight": 600
+      },
+      "jpsRewardStyle": {
+        "align": "center",
+        "fill": ["#F4C810", "#F4C810"],
+        "fontSize": 32,
+        "fontWeight": "bolder"
+      },
+      "sideMenuTitleStyle": {
+        "fontWeight": "bolder",
+        "fontSize": 42,
+        "fill": ["#FFCB6B", "#F58300"]
+      },
+      "balanceStyle": {
+        "fill": ["#F4C810", "#F4C810"]
+      },
+      "tagsStyle": {
+        "fontSize": 16,
+        "fontWeight": "bolder",
+        "fill": ["#5379DB", "#5379DB"]
+      },
+      "spinner": {
+        "bgColor": "#ffffff",
+        "fillColor": "#36BACB"
+      },
+      "infoActiveTabStyle": {
+        "color": "#162F83"
+      }
+    },
+    "mobile": {
+      "size": [1080, 1920],
+      "header": {
+        "height": 110,
+        "y": 0,
+        "x": 1,
+        "logo": {
+          "spine": {
+            "scale": {
+              "y": 1,
+              "x": 0.72
+            },
+            "position": {
+              "x": 544,
+              "y": 45
+            }
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "position": {
+            "x": 370,
+            "y": 0
+          }
+        },
+        "balance": {
+          "position": {
+            "x": 725,
+            "y": 50
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "login": {
+          "position": {
+            "x": 80,
+            "y": 42
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        }
+      },
+      "footer": {
+        "height": 240,
+        "jackpot": {
+          "spine": {
+            "position": {
+              "x": 0,
+              "y": -20
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": -270
+          }
+        },
+        "menuButton": {
+          "marginTop": -140,
+          "scale": {
+            "x": 1.8,
+            "y": 1.8
+          }
+        }
+      },
+      "jackpots": {
+        "miniGame": {
+          "winAnimationName": "animation",
+          "spinButtonPosition": {
+            "x": -150,
+            "y": 150
+          },
+          "reelsPosition": {
+            "x": -240,
+            "y": -250
+          },
+          "reelHorizontalMargin": 35,
+          "reelCellHeight": 200,
+          "reelCellWidth": 142,
+          "slotSize": [700, 420]
+        },
+        "scale": {
+          "x": 1.2,
+          "y": 1.2
+        },
+        "slotMini": {
+          "position": {
+            "x": 220,
+            "y": 200
+          }
+        },
+        "slotMajor": {
+          "position": {
+            "x": 220,
+            "y": 500
+          }
+        },
+        "slotGrand": {
+          "position": {
+            "x": 220,
+            "y": 800
+          }
+        },
+        "slotUltimate": {
+          "position": {
+            "x": 220,
+            "y": 1100
+          }
+        }
+      },
+      "sideMenu": {
+        "position": {
+          "x": 0,
+          "y": 530
+        },
+        "scale": {
+          "x": 1.2,
+          "y": 1.2
+        }
+      },
+      "gameList": {
+        "gameScale": 0.905,
+        "cardSpineAlpha": 0
+      }
+    },
+    "desktop": {
+      "size": [1920, 1080],
+      "header": {
+        "backGameBtnTitleX": 0,
+        "logo": {
+          "spine": {
+            "scale": {
+              "y": 0.93,
+              "x": 1
+            },
+            "position": {
+              "x": 974,
+              "y": 47
+            }
+          },
+          "position": {
+            "x": 734,
+            "y": 0
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "balance": {
+          "position": {
+            "x": 320,
+            "y": 50
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "login": {
+          "position": {
+            "x": 80,
+            "y": 45
+          },
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "height": 105,
+        "y": 0,
+        "x": 0,
+        "icons": {
+          "exit": "exit",
+          "recommendation": "recommendation",
+          "info": "info",
+          "mute": "mute"
+        }
+      },
+      "footer": {
+        "height": 100,
+        "jackpot": {
+          "spine": {
+            "position": {
+              "x": 0,
+              "y": -20
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": -150
+          }
+        },
+        "menuButton": {
+          "marginTop": -100,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "height": 100
+        }
+      },
+      "jackpots": {
+        "miniGame": {
+          "reelHorizontalMargin": 35,
+          "winAnimationName": "animation",
+          "reelsPosition": {
+            "x": -240,
+            "y": -250
+          },
+          "spinButtonPosition": {
+            "x": -150,
+            "y": 150
+          },
+          "reelCellHeight": 200,
+          "reelCellWidth": 142,
+          "slotSize": [700, 420]
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        },
+        "slotMini": {
+          "position": {
+            "x": 1070,
+            "y": 550
+          }
+        },
+        "slotMajor": {
+          "position": {
+            "x": 280,
+            "y": 545
+          }
+        },
+        "slotGrand": {
+          "position": {
+            "x": 1120,
+            "y": 320
+          }
+        },
+        "slotUltimate": {
+          "position": {
+            "x": 220,
+            "y": 320
+          }
+        }
+      },
+      "sideMenu": {
+        "position": {
+          "x": 0,
+          "y": 320
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "gameList": {
+        "gameScale": 0.905,
+        "cardSpineAlpha": 0.5
+      }
+    }
+  }
+}
