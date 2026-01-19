@@ -8,6 +8,7 @@ import { createTopBarSprite } from './topBar';
 import { Jeckpots } from './Jackpots';
 import type { Ticker } from 'pixi.js';
 import { createLogoSpriteSystem } from './LogoAnimateSprite';
+import { createGamesCarouselSystem } from './GamesCarousel';
 function LobbyPage() {
   const createScene = useCallback<
     PixiBridgeOptions<unknown, unknown>['createScene']
@@ -23,21 +24,35 @@ function LobbyPage() {
       yOffsetPx: 75,
     });
 
+    const logoYRatio = 0.22;
     const logo = createLogoSpriteSystem({
       xRatio: 0.47,
-      yRatio: 0.22,
+      yRatio: logoYRatio,
       scale: 0.9,
       sprite: { fps: 12 },
+    });
+
+    const games = createGamesCarouselSystem({
+      yOffsetPx: (nextApp) => nextApp.screen.height * logoYRatio + 120,
+      heightPx: 420,
+      onPrev: () => console.log('prev'),
+      onNext: () => console.log('next'),
+      cols: 4,
+      rows: 3,
+      gapX: 58,
+      gapY: 58,
+      sideInsetPx: 54,
     });
 
     await bgSystem.init(app);
     await topBar.init(app);
     await logo.init(app);
-
+    await games.init(app);
     const handleResize = () => {
       bgSystem.resize();
       topBar.resize();
       logo.resize();
+      games.resize();
     };
     window.addEventListener('resize', handleResize);
 
@@ -53,6 +68,7 @@ function LobbyPage() {
       bgSystem.destroy();
       topBar.destroy();
       logo.destroy();
+      games.destroy();
     };
   }, []);
 
