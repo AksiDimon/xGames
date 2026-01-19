@@ -41,7 +41,7 @@ function LobbyPage() {
       rows: 3,
       gapX: 58,
       gapY: 58,
-      sideInsetPx: 54,
+      sideInsetPx: 44,
     });
 
     await bgSystem.init(app);

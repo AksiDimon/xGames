@@ -115,23 +115,15 @@ export function createGamesCarousel(
 
     leftArrow.position.set(arrowInsetPx + leftArrowW / 2, height / 2);
     rightArrow.position.set(width - arrowInsetPx - rightArrowW / 2, height / 2);
-    const safePad = 24;
     const leftEdge = leftArrow.x + leftArrowW / 2 + sideInsetPx;
     const rightEdge = rightArrow.x - rightArrowW / 2 - sideInsetPx;
     const availableW = Math.max(0, rightEdge - leftEdge);
 
-    const gridScaleBoost = 1.1;
-
-    const baseScale = Math.min(
-      maxScale,
-      availableW > 0 ? availableW / gridW : 0,
-      height > 0 ? height / gridH : 0
-    );
-    const scale = Math.min(maxScale, baseScale * gridScaleBoost);
-
-    gridContainer.scale.set(scale);
-    const gridLeft = leftEdge + (availableW - gridW * scale) / 2;
-    const gridTop = (height - gridH * scale) / 2;
+    const scaleX = Math.min(maxScale, availableW > 0 ? availableW / gridW : 0);
+    const scaleY = Math.min(1, (height / gridH) * 1.3);
+    gridContainer.scale.set(scaleX, scaleY);
+    const gridLeft = leftEdge + (availableW - gridW * scaleX) / 2;
+    const gridTop = (height - gridH * scaleY) / 2;
     gridContainer.position.set(gridLeft, gridTop);
   };
 
