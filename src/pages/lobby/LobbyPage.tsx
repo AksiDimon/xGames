@@ -9,6 +9,7 @@ import { Jeckpots } from './Jackpots';
 import type { Ticker } from 'pixi.js';
 import { createLogoSpriteSystem } from './LogoAnimateSprite';
 import { createGamesCarouselSystem } from './GamesCarousel';
+import { createFooterSystem } from './footer/createFooterContainer';
 function LobbyPage() {
   const createScene = useCallback<
     PixiBridgeOptions<unknown, unknown>['createScene']
@@ -43,16 +44,25 @@ function LobbyPage() {
       gapY: 58,
       sideInsetPx: 44,
     });
+    const footer = createFooterSystem({
+      heightPx: 120,
+      onButton1: () => console.log('button1'),
+      onButton2: () => console.log('button2'),
+      gap: 16,
+      padding: 0,
+    });
 
     await bgSystem.init(app);
     await topBar.init(app);
     await logo.init(app);
     await games.init(app);
+    await footer.init(app);
     const handleResize = () => {
       bgSystem.resize();
       topBar.resize();
       logo.resize();
       games.resize();
+      footer.resize();
     };
     window.addEventListener('resize', handleResize);
 
@@ -69,6 +79,7 @@ function LobbyPage() {
       topBar.destroy();
       logo.destroy();
       games.destroy();
+      footer.destroy();
     };
   }, []);
 
