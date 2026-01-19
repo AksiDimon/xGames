@@ -165,6 +165,8 @@ export function createGamesCarousel(
 type GamesCarouselSystemConfig = GamesCarouselConfig & {
   yOffsetPx?: number | ((app: Application) => number);
   heightPx?: number;
+  designWidth?: number;
+  parent?: Container;
 };
 
 export type GamesCarouselSceneSystem = {
@@ -178,14 +180,16 @@ export function createGamesCarouselSystem(
 ): GamesCarouselSceneSystem {
   let app: Application | null = null;
   let carousel: GamesCarouselSystem | null = null;
+  let parent: Container | null = null;
 
   const yOffsetPx = config.yOffsetPx ?? 320;
   const heightPx = config.heightPx ?? 420;
+  const designWidth = config.designWidth ?? 2560;
 
   const layout = () => {
     if (!app || !carousel) return;
     const y = typeof yOffsetPx === 'function' ? yOffsetPx(app) : yOffsetPx;
-    carousel.layout({ width: app.screen.width, height: heightPx });
+    carousel.layout({ width: designWidth, height: heightPx });
     carousel.container.position.set(0, y);
   };
 
@@ -194,7 +198,8 @@ export function createGamesCarouselSystem(
       app = nextApp;
       carousel = createGamesCarousel(config);
       await carousel.init();
-      app.stage.addChild(carousel.container);
+      parent = config.parent ?? app.stage;
+      parent.addChild(carousel.container);
       layout();
     },
 

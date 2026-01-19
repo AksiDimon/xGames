@@ -62,6 +62,8 @@ type Config = {
   btnPaddingPx?: number; // отступ кнопок от краёв бара (в “пикселях текстуры бара”)
   btnHeightRatio?: number;
   barHeightPx?: number;
+  designWidth?: number;
+  parent?: Container;
 };
 
 export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
@@ -72,6 +74,7 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
   let btnRight: Sprite | null = null;
   let arrowLeft: Sprite | null = null;
   let arrowRight: Sprite | null = null;
+  let parent: Container | null = null;
 
   const providersCarousel = createProvidersCarousel({
     providers: arrProviders,
@@ -84,6 +87,7 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
 
   const yOffsetPx = config.yOffsetPx ?? 75;
   const barHeightPx = config.barHeightPx ?? 75;
+  const designWidth = config.designWidth ?? 2560;
 
   const btnPaddingPx = config.btnPaddingPx ?? 2;
   const layout = () => {
@@ -98,7 +102,7 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
     ) {
       return;
     }
-    const sw = app.screen.width;
+    const sw = designWidth;
 
     // 1) bar — как раньше
     root.position.set(0, yOffsetPx);
@@ -109,13 +113,9 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
     bar.width = sw;
     bar.height = barHeightPx;
 
-    // 2) кнопки — масштаб ТОЛЬКО от ширины
-    const baseW = 2560;
-    const wFactor = sw / baseW;
-    const btnScale = Math.max(0.2, Math.min(1, wFactor)); // верхний clamp можешь 1 оставить
-
-    btnLeft.scale.set(btnScale, 0.4);
-    btnRight.scale.set(btnScale, 0.4);
+    // 2) кнопки — фиксированный масштаб в координатах дизайна
+    btnLeft.scale.set(1, 0.4);
+    btnRight.scale.set(1, 0.4);
 
     // 3) якоря/позиции
     btnLeft.anchor.set(0, 0.55);
@@ -148,6 +148,7 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
     async init(nextApp: Application) {
       try {
         app = nextApp;
+        parent = config.parent ?? app.stage;
         const [barTex, btnTex, arrowTex] = await Promise.all([
           Assets.load(topBarImg),
           Assets.load(buttonImg),
@@ -168,7 +169,7 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
         root.addChild(btnRight);
         btnLeft.addChild(arrowLeft);
         btnRight.addChild(arrowRight);
-        app.stage.addChild(root);
+        parent.addChild(root);
 
         await providersCarousel.init({
           app,

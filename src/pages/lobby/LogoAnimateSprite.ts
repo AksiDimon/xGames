@@ -2,6 +2,7 @@
 import {
   Assets,
   AnimatedSprite,
+  Container,
   Rectangle,
   Texture,
   type Application,
@@ -128,6 +129,9 @@ type LogoSpriteSystemConfig = {
   yRatio?: number; // 0..1, позиция по высоте экрана
   scale?: number; // масштаб спрайта
   sprite?: CreateLogoOptions;
+  designWidth?: number;
+  designHeight?: number;
+  parent?: Container;
 };
 
 export function createLogoSpriteSystem(
@@ -135,27 +139,27 @@ export function createLogoSpriteSystem(
 ): LogoSpriteSystem {
   let app: Application | null = null;
   let anim: AnimatedSprite | null = null;
+  let parent: Container | null = null;
 
   const xRatio = config.xRatio ?? 0.5;
   const yRatio = config.yRatio ?? 0.2;
   const scale = config.scale ?? 1;
-
-  const baseW = 2560;
+  const designWidth = config.designWidth ?? 2560;
+  const designHeight = config.designHeight ?? 1440;
 
   const layout = () => {
     if (!app || !anim) return;
-    const wFactor = app.screen.width / baseW;
-    anim.position.set(app.screen.width * xRatio, app.screen.height * yRatio);
-    // Масштабируем только по X, по Y оставляем базовый scale.
-    anim.scale.set(scale * wFactor, scale);
+    anim.position.set(designWidth * xRatio, designHeight * yRatio);
+    anim.scale.set(scale);
   };
 
   return {
     async init(nextApp: Application) {
       app = nextApp;
+      parent = config.parent ?? app.stage;
       const { anim: created } = await createLogoAnimateSprite(config.sprite);
       anim = created;
-      app.stage.addChild(anim);
+      parent.addChild(anim);
       layout();
     },
 

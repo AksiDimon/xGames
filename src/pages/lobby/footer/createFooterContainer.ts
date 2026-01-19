@@ -79,10 +79,8 @@ export async function createFooterContainer(
     const innerGap = gap ?? config.gap ?? 16;
     const innerPadding = padding ?? config.padding ?? 16;
 
-    const baseW = 2560;
-    const wFactor = width / baseW;
     const navScaleY = Math.min(1, height / navTex.height);
-    const navScaleX = navScaleY * wFactor;
+    const navScaleX = navScaleY;
     leftNav.scale.set(navScaleX, navScaleY);
     rightNav.scale.set(-navScaleX, navScaleY);
 
@@ -147,6 +145,9 @@ export async function createFooterContainer(
 type FooterSceneConfig = FooterConfig & {
   yOffsetPx?: number | ((app: Application) => number);
   heightPx?: number;
+  designWidth?: number;
+  designHeight?: number;
+  parent?: Container;
 };
 
 export type FooterSceneSystem = {
@@ -160,15 +161,18 @@ export function createFooterSystem(
 ): FooterSceneSystem {
   let app: Application | null = null;
   let footer: FooterContainerSystem | null = null;
+  let parent: Container | null = null;
 
-  const yOffsetPx =
-    config.yOffsetPx ?? ((nextApp: Application) => nextApp.screen.height - 120);
+  const designWidth = config.designWidth ?? 2560;
+  const designHeight = config.designHeight ?? 1440;
   const heightPx = config.heightPx ?? 120;
+  const yOffsetPx =
+    config.yOffsetPx ?? ((_app: Application) => designHeight - heightPx);
 
   const layout = () => {
     if (!app || !footer) return;
     const y = typeof yOffsetPx === 'function' ? yOffsetPx(app) : yOffsetPx;
-    footer.layout({ width: app.screen.width, height: heightPx });
+    footer.layout({ width: designWidth, height: heightPx });
     footer.container.position.set(0, y);
   };
 
@@ -176,7 +180,8 @@ export function createFooterSystem(
     async init(nextApp: Application) {
       app = nextApp;
       footer = await createFooterContainer(config);
-      app.stage.addChild(footer.container);
+      parent = config.parent ?? app.stage;
+      parent.addChild(footer.container);
       layout();
     },
 
