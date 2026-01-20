@@ -67,7 +67,7 @@ function LobbyPage() {
       parent: root,
     });
     const footer = createFooterSystem({
-      heightPx: 120,
+      heightPx: 160,
       onButton1: () => console.log('button1'),
       onButton2: () => console.log('button2'),
       gap: 6,
