@@ -2,10 +2,13 @@ import {
   Assets,
   BitmapText,
   Container,
+  Graphics,
   Sprite,
   type Application,
   type Texture,
 } from 'pixi.js';
+import { createLeftNavGroup } from './leftNavContent';
+import { createRightNavGroup } from './rightNavContent';
 
 const footerNavImg = '/raw-assets/common/footer-nav.png';
 const wagerImg = '/raw-assets/common/wager-box.png';
@@ -55,42 +58,16 @@ export async function createFooterContainer(
   await Assets.load(impactFont);
   await Assets.load(tekoFont);
 
-  const leftNavGroup = new Container();
-  const leftNavBg = new Sprite(navTex);
-  const leftNavContent = new Container();
-  const rightNav = new Sprite(navTex);
+  const leftNav = createLeftNavGroup({
+    navTex,
+    flagTex,
+    gridTex,
+    pressedTex,
+  });
+  const rightNav = createRightNavGroup({ navTex });
   const wagerBox = new Sprite(wagerTex);
   const button1 = new Sprite(buttonTex);
   const button2 = new Sprite(buttonTex);
-
-  const balanceLabel = new BitmapText({
-    text: 'BALANCE',
-    style: {
-      fontFamily: 'Impact-Regular-White',
-      fontSize: 28,
-      fill: 'orange',
-    },
-  });
-  const balanceValue = new BitmapText({
-    text: '9925',
-    style: {
-      fontFamily: 'Impact-Regular-White',
-      fontSize: 34,
-    },
-  });
-  const flagSprite = new Sprite(flagTex);
-  const gridSprite = new Sprite(gridTex);
-  const cashbackGroup = new Container();
-  const cashbackButton = new Sprite(pressedTex);
-  cashbackButton.tint = '#c8a6eaff';
-  const cashbackText = new BitmapText({
-    text: 'CASHBACKBONUSE\n1300',
-    style: {
-      fontFamily: 'Impact-Regular-White',
-      fontSize: 18,
-      align: 'center',
-    },
-  });
 
   const wagerBoxText = new BitmapText({
     text:
@@ -139,22 +116,9 @@ export async function createFooterContainer(
     button2.off('pointerdown', onButton2);
   };
 
-  leftNavBg.anchor.set(0.5, 0.5);
-  leftNavContent.position.set(-navTex.width / 2, -navTex.height / 2);
-  leftNavGroup.addChild(leftNavBg);
-  leftNavGroup.addChild(leftNavContent);
-
-  cashbackGroup.addChild(cashbackButton);
-  cashbackGroup.addChild(cashbackText);
-  leftNavContent.addChild(balanceLabel);
-  leftNavContent.addChild(flagSprite);
-  leftNavContent.addChild(gridSprite);
-  leftNavContent.addChild(balanceValue);
-  leftNavContent.addChild(cashbackGroup);
-
-  container.addChild(leftNavGroup);
+  container.addChild(leftNav.group);
   container.addChild(innerGroup);
-  container.addChild(rightNav);
+  container.addChild(rightNav.group);
 
   innerGroup.addChild(wagerBox);
   innerGroup.addChild(button1);
@@ -168,46 +132,17 @@ export async function createFooterContainer(
 
     const navScaleY = Math.min(1, height / navTex.height);
     const navScaleX = navScaleY;
-    leftNavGroup.scale.set(navScaleX, navScaleY + 0.2);
-    rightNav.scale.set(-navScaleX, navScaleY + 0.2);
+    leftNav.group.scale.set(navScaleX, navScaleY + 0.2);
+    rightNav.group.scale.set(navScaleX, navScaleY + 0.2);
 
-    rightNav.anchor.set(0.5, 0.5);
+    const leftNavW = Math.abs(leftNav.group.width);
+    const rightNavW = Math.abs(rightNav.group.width);
 
-    const leftNavW = Math.abs(leftNavGroup.width);
-    const rightNavW = Math.abs(rightNav.width);
+    leftNav.group.position.set(innerPadding + leftNavW / 2, height / 2);
+    rightNav.group.position.set(width - innerPadding - rightNavW / 2, height / 2);
 
-    leftNavGroup.position.set(innerPadding + leftNavW / 2, height / 2);
-    rightNav.position.set(width - innerPadding - rightNavW / 2, height / 2);
-
-    const P = 14;
-    const GAP = 10;
-    const iconScale = 0.2;
-    const btnScale = 0.55;
-
-    flagSprite.scale.set(iconScale);
-    gridSprite.scale.set(0.4);
-    cashbackButton.scale.set(btnScale);
-    cashbackText.scale.set(1.23);
-    balanceValue.scale.set(1.4);
-    balanceLabel.scale.set(1.8);
-
-    balanceLabel.position.set(P, P - 10);
-    flagSprite.position.set(balanceLabel.x + balanceLabel.width + GAP + 40, P);
-    gridSprite.position.set(flagSprite.x + flagSprite.width + GAP, P);
-
-    balanceValue.position.set(P + 45, navTex.height - P - balanceValue.height);
-    const btnW = pressedTex.width * btnScale;
-    const btnH = pressedTex.height * btnScale;
-    cashbackButton.position.set(
-      navTex.width - P - btnW + 6,
-      navTex.height - P - btnH + 25
-    );
-    cashbackGroup.position.set(cashbackButton.x, cashbackButton.y);
-    cashbackButton.position.set(0, 0);
-    cashbackText.position.set(
-      Math.max(0, (btnW - cashbackText.width) / 2),
-      Math.max(0, (btnH - cashbackText.height) / 2)
-    );
+    rightNav.layout();
+    leftNav.layout();
 
     // Layout inner group at scale 1 first.
     const wagerScale = 1.15;
@@ -252,8 +187,8 @@ export async function createFooterContainer(
     const innerW = wagerW + buttonW * 2 + innerGap * 2;
     const innerH = Math.max(wagerH, buttonH);
 
-    const leftEdge = leftNavGroup.x + leftNavW / 2 + innerGap;
-    const rightEdge = rightNav.x - rightNavW / 2 - innerGap;
+    const leftEdge = leftNav.group.x + leftNavW / 2 + innerGap;
+    const rightEdge = rightNav.group.x - rightNavW / 2 - innerGap;
     const availableW = Math.max(0, rightEdge - leftEdge);
 
     const innerScaleX = Math.min(1, availableW > 0 ? availableW / innerW : 0);
@@ -271,6 +206,7 @@ export async function createFooterContainer(
     container,
     layout,
     destroy() {
+      rightNav.destroy();
       removeButtons();
       container.destroy({ children: true, texture: false });
     },
