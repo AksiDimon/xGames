@@ -6,6 +6,14 @@ type FitToViewportOptions = {
   designWidth: number;
   designHeight: number;
   container: HTMLElement;
+  onResize?: (args: {
+    viewW: number;
+    viewH: number;
+    scaleX: number;
+    scaleY: number;
+    offsetX: number;
+    offsetY: number;
+  }) => void;
 };
 
 export function fitToViewport({
@@ -14,7 +22,11 @@ export function fitToViewport({
   designWidth,
   designHeight,
   container,
+  onResize,
 }: FitToViewportOptions): () => void {
+  let prevW = 0;
+  let prevH = 0;
+
   const handleResize = () => {
     const viewW = container.clientWidth;
     const viewH = container.clientHeight;
@@ -22,15 +34,28 @@ export function fitToViewport({
 
     app.renderer.resize(viewW, viewH);
 
-    // Scale only by X to keep design Y size stable.
-    const scaleX = viewW / designWidth;
-    root.scale.set(scaleX, 1);
+    if (viewW !== prevW) {
+      root.scale.x = viewW / designWidth;
+    }
+    if (viewH !== prevH) {
+      root.scale.y = viewH / designHeight;
+    }
+    prevW = viewW;
+    prevH = viewH;
 
-    // Anchor the design center so scaling happens from the middle (X).
-    root.pivot.set(designWidth / 2, designHeight / 2);
+    root.position.set(
+      (viewW - designWidth * root.scale.x) / 2,
+      (viewH - designHeight * root.scale.y) / 2
+    );
 
-    // Keep Y unscaled: align to top so upper UI stays visible.
-    root.position.set(viewW / 2, designHeight / 2);
+    onResize?.({
+      viewW,
+      viewH,
+      scaleX: root.scale.x,
+      scaleY: root.scale.y,
+      offsetX: root.position.x,
+      offsetY: root.position.y,
+    });
   };
 
   handleResize();

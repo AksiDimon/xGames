@@ -1,11 +1,5 @@
 // src/pages/lobby/background.ts
-import {
-  Assets,
-  Container,
-  Sprite,
-  type Application,
-  type Texture,
-} from 'pixi.js';
+import { Assets, Sprite, type Application, type Texture } from 'pixi.js';
 
 const backgroundImage = '/raw-assets/backbroundVegas.jpg';
 
@@ -18,19 +12,15 @@ export type BackgroundSystem = {
 
 type Config = {
   moveSpeed?: number; // скорость обхода ромба
-  offsetXRatio?: number; // амплитуда по X (доля ширины макета)
-  offsetYRatio?: number; // амплитуда по Y (доля высоты макета)
+  offsetXRatio?: number; // амплитуда по X (доля ширины экрана)
+  offsetYRatio?: number; // амплитуда по Y (доля высоты экрана)
   minScale?: number; // 1
   maxScale?: number; // 1.65
-  designWidth?: number;
-  designHeight?: number;
-  parent?: Container;
 };
 
 export function createBackground(config: Config = {}): BackgroundSystem {
   let app: Application | null = null;
   let bg: Sprite | null = null;
-  let parent: Container | null = null;
 
   // состояние анимации
   let pathT = 0;
@@ -40,29 +30,27 @@ export function createBackground(config: Config = {}): BackgroundSystem {
   const offsetYRatio = config.offsetYRatio ?? 0.2;
   const minScale = config.minScale ?? 1;
   const maxScale = config.maxScale ?? 1.65;
-  const designWidth = config.designWidth ?? 2560;
-  const designHeight = config.designHeight ?? 1440;
 
   const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
   const smoothstep = (t: number) => t * t * (3 - 2 * t);
 
   const getBaseScale = () => {
-    if (!bg) return 1;
+    if (!app || !bg) return 1;
     return Math.max(
-      designWidth / bg.texture.width,
-      designHeight / bg.texture.height
+      app.screen.width / bg.texture.width,
+      app.screen.height / bg.texture.height
     );
   };
 
   const fitBase = () => {
-    if (!bg) return;
+    if (!app || !bg) return;
     const base = getBaseScale();
     bg.scale.set(base);
-    bg.position.set(designWidth / 2, designHeight / 2);
+    bg.position.set(app.screen.width / 2, app.screen.height / 2);
   };
 
   const stepPath = (delta: number) => {
-    if (!bg) {
+    if (!app) {
       return { offsetX: 0, offsetY: 0, seg: 0, localT: 0 };
     }
 
@@ -72,8 +60,8 @@ export function createBackground(config: Config = {}): BackgroundSystem {
     const seg = Math.floor(pathT); // 0..3
     const localT = pathT - seg; // 0..1
 
-    const maxOffsetX = designWidth * offsetXRatio;
-    const maxOffsetY = designHeight * offsetYRatio;
+    const maxOffsetX = app.screen.width * offsetXRatio;
+    const maxOffsetY = app.screen.height * offsetYRatio;
 
     const vertices = [
       { x: maxOffsetX, y: 0 },
@@ -94,7 +82,7 @@ export function createBackground(config: Config = {}): BackgroundSystem {
   };
 
   const applyTransform = (delta: number) => {
-    if (!bg) return;
+    if (!app || !bg) return;
 
     const baseScale = getBaseScale();
 
@@ -111,22 +99,21 @@ export function createBackground(config: Config = {}): BackgroundSystem {
 
     bg.scale.set(baseScale * segScale);
     bg.position.set(
-      designWidth / 2 + offsetX,
-      designHeight / 2 + offsetY
+      app.screen.width / 2 + offsetX,
+      app.screen.height / 2 + offsetY
     );
   };
 
   return {
     async init(nextApp: Application) {
       app = nextApp;
-      parent = config.parent ?? app.stage;
 
       const texture: Texture = await Assets.load(backgroundImage);
       bg = new Sprite(texture);
       bg.anchor.set(0.5);
 
       fitBase();
-      parent.addChild(bg);
+      app.stage.addChildAt(bg, 0);
     },
 
     resize() {

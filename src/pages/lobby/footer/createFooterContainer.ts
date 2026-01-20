@@ -110,9 +110,17 @@ export async function createFooterContainer(
     button1.anchor.set(0, 0);
     button2.anchor.set(0, 0);
 
+    const MARGIN_BUTTONS = 100;
+    const MARGIN_BUTTONS_TOP = 30;
     wagerBox.position.set(0, 0);
-    button1.position.set(wagerW + innerGap, 0);
-    button2.position.set(wagerW + innerGap + buttonW + innerGap, 0);
+    button1.position.set(
+      wagerW + innerGap + MARGIN_BUTTONS,
+      MARGIN_BUTTONS_TOP
+    );
+    button2.position.set(
+      wagerW + innerGap + buttonW + innerGap + MARGIN_BUTTONS,
+      MARGIN_BUTTONS_TOP
+    );
 
     const innerW = wagerW + buttonW * 2 + innerGap * 2;
     const innerH = Math.max(wagerH, buttonH);
@@ -167,7 +175,7 @@ export function createFooterSystem(
   const designHeight = config.designHeight ?? 1440;
   const heightPx = config.heightPx ?? 120;
   const yOffsetPx =
-    config.yOffsetPx ?? ((_app: Application) => designHeight - heightPx);
+    config.yOffsetPx ?? ((_app: Application) => designHeight - heightPx - 5);
 
   const layout = () => {
     if (!app || !footer) return;

@@ -10,30 +10,41 @@ const COUNTER_POS = [
   { left: '86.2%', top: '27%' },
 ];
 
-export function Jeckpots() {
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [scale, setScale] = useState(1);
+type JackpotsTransform = {
+  scaleX: number;
+  scaleY: number;
+  offsetX: number;
+  offsetY: number;
+};
 
-  useEffect(() => {
-    const update = () => {
-      const w = imgRef.current?.clientWidth || 0;
-      setScale(w ? Math.min(1, w / 1532) : 1);
-    };
-    update();
-    const obs = new ResizeObserver(update);
-    if (imgRef.current) obs.observe(imgRef.current);
-    return () => obs.disconnect();
-  }, []);
+export function Jeckpots({
+  transform,
+  designWidth,
+  heightPx = 75,
+}: {
+  transform: JackpotsTransform;
+  designWidth: number;
+  heightPx?: number;
+}) {
+  const digitWidth = 21.5;
+  const transformStyle = `translate(${transform.offsetX}px, ${transform.offsetY}px) scale(${transform.scaleX}, ${transform.scaleY})`;
 
   return (
-    <div className={styles.jackpots} aria-hidden>
+    <div
+      className={styles.jackpots}
+      aria-hidden
+      style={{
+        width: `${designWidth}px`,
+        height: `${heightPx}px`,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        transform: transformStyle,
+        transformOrigin: '0 0',
+      }}
+    >
       <div className={styles.jackpotsInner}>
-        <img
-          ref={imgRef}
-          className={styles.jackpotsImg}
-          src={jackpotsImg}
-          alt="jackpots"
-        />
+        <img className={styles.jackpotsImg} src={jackpotsImg} alt="jackpots" />
         <div className={styles.digitsLayer}>
           {JACKPOTS_MOCK.map((jcptData, i) => {
             return (
@@ -41,7 +52,7 @@ export function Jeckpots() {
                 digits={jcptData.digits}
                 key={i}
                 style={COUNTER_POS[i]}
-                digitWidth={21.5 * scale}
+                digitWidth={digitWidth}
               />
             );
           })}
@@ -101,8 +112,11 @@ function JackpotDigitsRow({
   digitWidth: number;
 }) {
   return (
-    <div className={styles.counter} style={style}>
-      <div className={styles.slot} style={{ width: '1.1vw' }}>
+    <div
+      className={styles.counter}
+      style={{ ...style, border: '1px solid red' }}
+    >
+      <div className={styles.slot} style={{ width: `${digitWidth}px` }}>
         <div className={styles.stub}> </div>
       </div>
 

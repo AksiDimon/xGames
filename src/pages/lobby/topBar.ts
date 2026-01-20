@@ -114,8 +114,8 @@ export function createTopBarSprite(config: Config = {}): TopBarSpriteSystem {
     bar.height = barHeightPx;
 
     // 2) кнопки — фиксированный масштаб в координатах дизайна
-    btnLeft.scale.set(1, 0.4);
-    btnRight.scale.set(1, 0.4);
+    btnLeft.scale.set(1, 0.6);
+    btnRight.scale.set(1, 0.6);
 
     // 3) якоря/позиции
     btnLeft.anchor.set(0, 0.55);

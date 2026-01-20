@@ -1,6 +1,6 @@
 // src/pages/lobby/LobbyPage.tsx
 import styles from './lobby.module.css';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { usePixiBridge } from '../../pixi/usePixiBridge';
 import type { PixiBridgeOptions } from '../../pixi/usePixiBridge';
 import { createBackground } from './background';
@@ -11,14 +11,20 @@ import { createLogoSpriteSystem } from './LogoAnimateSprite';
 import { createGamesCarouselSystem } from './GamesCarousel';
 import { createFooterSystem } from './footer/createFooterContainer';
 import { fitToViewport } from '../../pixi/fitToViewport';
-function LobbyPage() {
-  const createScene = useCallback<
-    PixiBridgeOptions<unknown, unknown>['createScene']
-  >(async ({ app }) => {
-    // Design resolution: all layout is authored in this coordinate space.
-    const DESIGN_WIDTH = 2560;
-    const DESIGN_HEIGHT = 1440;
 
+const DESIGN_WIDTH = 2560;
+const DESIGN_HEIGHT = 1440;
+function LobbyPage() {
+  const [uiTransform, setUiTransform] = useState({
+    scaleX: 1,
+    scaleY: 1,
+    offsetX: 0,
+    offsetY: 0,
+  });
+
+  const createScene = useCallback<
+    PixiBridgeOptions<unknown, typeof uiTransform>['createScene']
+  >(async ({ app, sendToReact }) => {
     const root = new Container();
     app.stage.addChild(root);
 
@@ -28,17 +34,15 @@ function LobbyPage() {
       offsetYRatio: 0.2,
       minScale: 1,
       maxScale: 1.65,
-      designWidth: DESIGN_WIDTH,
-      designHeight: DESIGN_HEIGHT,
-      parent: root,
     });
     const topBar = createTopBarSprite({
+      barHeightPx: 120,
       yOffsetPx: 75,
       designWidth: DESIGN_WIDTH,
       parent: root,
     });
 
-    const logoYRatio = 0.15;
+    const logoYRatio = 0.17;
     const logo = createLogoSpriteSystem({
       xRatio: 0.47,
       yRatio: logoYRatio,
@@ -50,15 +54,15 @@ function LobbyPage() {
     });
 
     const games = createGamesCarouselSystem({
-      yOffsetPx: DESIGN_HEIGHT * logoYRatio + 120,
-      heightPx: 420,
+      yOffsetPx: DESIGN_HEIGHT * logoYRatio + 220,
+      heightPx: 580,
       onPrev: () => console.log('prev'),
       onNext: () => console.log('next'),
       cols: 4,
       rows: 3,
-      gapX: 58,
-      gapY: 58,
-      sideInsetPx: 44,
+      gapX: 98,
+      gapY: 28,
+      sideInsetPx: 64,
       designWidth: DESIGN_WIDTH,
       parent: root,
     });
@@ -66,7 +70,7 @@ function LobbyPage() {
       heightPx: 120,
       onButton1: () => console.log('button1'),
       onButton2: () => console.log('button2'),
-      gap: 16,
+      gap: 6,
       padding: 0,
       designWidth: DESIGN_WIDTH,
       designHeight: DESIGN_HEIGHT,
@@ -85,6 +89,10 @@ function LobbyPage() {
       designWidth: DESIGN_WIDTH,
       designHeight: DESIGN_HEIGHT,
       container: app.canvas.parentElement ?? document.body,
+      onResize: ({ scaleX, scaleY, offsetX, offsetY }) => {
+        sendToReact({ scaleX, scaleY, offsetX, offsetY });
+        bgSystem.resize();
+      },
     });
 
     const handleTick = (ticker: Ticker) => {
@@ -105,14 +113,15 @@ function LobbyPage() {
     };
   }, []);
 
-  const { containerRef } = usePixiBridge({
+  const { containerRef } = usePixiBridge<unknown, typeof uiTransform>({
     background: '#000',
     createScene,
+    onMessage: setUiTransform,
   });
 
   return (
     <section className={styles.wrapper}>
-      <Jeckpots />
+      <Jeckpots transform={uiTransform} designWidth={DESIGN_WIDTH} />
 
       <div ref={containerRef} className={styles.lobbyContainer} />
     </section>
