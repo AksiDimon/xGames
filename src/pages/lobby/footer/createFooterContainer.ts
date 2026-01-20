@@ -1,5 +1,6 @@
 import {
   Assets,
+  BitmapText,
   Container,
   Sprite,
   type Application,
@@ -9,6 +10,7 @@ import {
 const footerNavImg = '/raw-assets/common/footer-nav.png';
 const wagerImg = '/raw-assets/common/wager-box.png';
 const buttonImg = '/raw-assets/common/button-primary_default.png';
+const impactFont = '/raw-assets/fonts/Impact-Regular-White.fnt';
 
 type FooterLayoutArgs = {
   width: number;
@@ -41,12 +43,44 @@ export async function createFooterContainer(
     Assets.load(wagerImg),
     Assets.load(buttonImg),
   ]);
+  // Load BMFont; PNG is referenced from the .fnt and must sit next to it.
+  await Assets.load(impactFont);
 
   const leftNav = new Sprite(navTex);
   const rightNav = new Sprite(navTex);
   const wagerBox = new Sprite(wagerTex);
   const button1 = new Sprite(buttonTex);
   const button2 = new Sprite(buttonTex);
+
+  const wagerBoxText = new BitmapText({
+    text:
+      'BALANCE 9925   CHARGABLE BALANCE 4485\n' +
+      'WAGER 1500   CASHBACK 1300\n' +
+      'DAILYBONUS 100',
+    style: {
+      fontFamily: 'Impact-Regular-White',
+      fontSize: 26,
+      align: 'center',
+    },
+  });
+  const button1Text = new BitmapText({
+    text: 'LOGOUT',
+    style: {
+      fontFamily: 'Impact-Regular-White',
+      fontSize: 68,
+    },
+  });
+  const button2Text = new BitmapText({
+    text: 'HELP',
+    style: {
+      fontFamily: 'Impact-Regular-White',
+      fontSize: 68,
+    },
+  });
+
+  wagerBox.addChild(wagerBoxText);
+  button1.addChild(button1Text);
+  button2.addChild(button2Text);
 
   const onButton1 = config.onButton1 ?? (() => console.log('button1'));
   const onButton2 = config.onButton2 ?? (() => console.log('button2'));
@@ -120,6 +154,17 @@ export async function createFooterContainer(
     button2.position.set(
       wagerW + innerGap + buttonW + innerGap + MARGIN_BUTTONS,
       MARGIN_BUTTONS_TOP
+    );
+
+    const wagerTextPadX = 24;
+    wagerBoxText.position.set(wagerTextPadX, Math.max(0, wagerH / 10));
+    button1Text.position.set(
+      Math.max(0, buttonW - button1Text.width + 50),
+      Math.max(0, (buttonH - button1Text.height) / 2)
+    );
+    button2Text.position.set(
+      Math.max(0, buttonW - button2Text.width + 20),
+      Math.max(0, (buttonH - button2Text.height) / 2)
     );
 
     const innerW = wagerW + buttonW * 2 + innerGap * 2;
